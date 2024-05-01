@@ -112,7 +112,7 @@ def game ():
              'y': second_obstacle[0]['y']},
         ]
 
-        obstacle_speed = -4  # set the speed at which obstacles move
+        obstacle_speed = -5  # set the speed at which obstacles move
 
         bird_speed = -9  # set the initial speed of the bird
         max_bird_speed = 10  # set the maximum speed of the bird
@@ -165,10 +165,10 @@ def game ():
                 lowerPipe['x'] += obstacle_speed
 
             # create a new pair of obstacles if the first pair is about to exit the screen
-            if 0 < up_obstacles[0]['x'] < 5:
-                newobstacle = create_obstacle()
-                up_obstacles.append(newobstacle[0])
-                down_obstacles.append(newobstacle[1])
+            if 0 < up_obstacles[0]['x'] < 15:
+                new_obstacle = create_obstacle()
+                up_obstacles.append(new_obstacle[0])
+                down_obstacles.append(new_obstacle[1])
 
             # remove the first pair of obstacles from the list if they exit the screen
             if up_obstacles[0]['x'] < -images['obstacle'][0].get_width():
